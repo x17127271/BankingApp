@@ -1,0 +1,8 @@
+com\mycompany\jerseytutorial\services\AccountService.class
+com\mycompany\jerseytutorial\models\Transaction.class
+com\mycompany\jerseytutorial\models\Account.class
+com\mycompany\jerseytutorial\resources\AccountResource.class
+com\mycompany\jerseytutorial\services\CustomerService.class
+com\mycompany\jerseytutorial\databases\Database.class
+com\mycompany\jerseytutorial\resources\CustomerResource.class
+com\mycompany\jerseytutorial\models\Customer.class
