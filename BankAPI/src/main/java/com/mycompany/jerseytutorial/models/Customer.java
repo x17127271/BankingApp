@@ -23,14 +23,15 @@ public class Customer {
     private String password;
     private Date created;
     private List<Account> accounts;
+    private List<Transaction> transactions;
 
     public Customer() {
     }
 
     public Customer(long id, String name, String email, String address,
-                    String password, List<Account> accounts) {
+            String password, List<Account> accounts, List<Transaction> transactions) {
         this.id = id;
-        this.name = name;           
+        this.name = name;
         this.email = email;
         this.address = address;
         this.created = new Date();
@@ -67,7 +68,7 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
     public String getAddress() {
         return address;
     }
@@ -75,7 +76,7 @@ public class Customer {
     public void setAddress(String address) {
         this.address = address;
     }
-    
+
     public String getPassword() {
         return password;
     }
@@ -90,6 +91,14 @@ public class Customer {
 
     public void setAccounts(List<Account> accounts) {
         this.accounts = accounts;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
 }

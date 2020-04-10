@@ -40,5 +40,11 @@ public class CustomerResource {
 	System.out.println("Getting accounts subresoruces...");
 	return new AccountResource();
     }
+    
+    @Path("/{customerID}/transactions")
+    public TransactionResource getTransactionsResource() {
+	System.out.println("Getting transaction subresoruces...");
+	return new TransactionResource();
+    }
 
 }
