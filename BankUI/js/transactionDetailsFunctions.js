@@ -11,13 +11,17 @@ $(function () {
       type: "GET",
       contentType: "application/json;",
       success: function (transaction) {
+         //show transaction created value
+         $("#transaction-created").append(
+          "<label><b>Date Created: </b></label><label> " + transaction.created + "</label>"
+        );
         //show transaction type value
         $("#transaction-type").append(
           "<label><b>Type: </b></label><label> " + transaction.type + "</label>"
         );
         //show transaction description value
         $("#transaction-description").append(
-          "<label><b>Account Number: </b></label><label> " +
+          "<label><b>Description: </b></label><label> " +
           transaction.description +
             "</label>"
         );

@@ -17,7 +17,7 @@ public class Transaction {
 
     private long id;
     private String type;
-    private Date date;
+    private Date created;
     private String description;
     private double upatedBalance;
 
@@ -29,6 +29,7 @@ public class Transaction {
         this.type = type;
         this.description = description;
         this.upatedBalance = upatedBalance;
+        this.created = new Date();
     }
 
     public long getId() {
@@ -61,6 +62,14 @@ public class Transaction {
 
     public void setUpatedBalance(double upatedBalance) {
         this.upatedBalance = upatedBalance;
+    }
+    
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
 }
