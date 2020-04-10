@@ -36,7 +36,7 @@ public class AccountService {
       public Account createAccount(Account account) {
 	account.setId(accountList.size() + 1);
 	accountList.add(account);
-	System.out.println("201 - resource created with path: /messages/" + String.valueOf(account.getId()));
+	System.out.println("201 - resource created with path: /accounts/" + String.valueOf(account.getId()));
 	return account;
     }
     

@@ -5,4 +5,6 @@ C:\Source\gitprojects\BankingApp\BankAPI\src\main\java\com\mycompany\jerseytutor
 C:\Source\gitprojects\BankingApp\BankAPI\src\main\java\com\mycompany\jerseytutorial\services\AccountService.java
 C:\Source\gitprojects\BankingApp\BankAPI\src\main\java\com\mycompany\jerseytutorial\services\CustomerService.java
 C:\Source\gitprojects\BankingApp\BankAPI\src\main\java\com\mycompany\jerseytutorial\models\Account.java
+C:\Source\gitprojects\BankingApp\BankAPI\src\main\java\com\mycompany\jerseytutorial\resources\TransactionResource.java
+C:\Source\gitprojects\BankingApp\BankAPI\src\main\java\com\mycompany\jerseytutorial\services\TransactionService.java
 C:\Source\gitprojects\BankingApp\BankAPI\src\main\java\com\mycompany\jerseytutorial\models\Transaction.java

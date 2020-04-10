@@ -29,20 +29,20 @@ public class AccountResource {
     private AccountService accountService = new AccountService();
 	
     @GET
-    public List<Account> getComments(@PathParam("accountID") int id) {
-        System.out.println("getAllAccountsForMessage..."+id);
+    public List<Account> getAccounts(@PathParam("accountID") int id) {
+        System.out.println("getAllAccountsForCustomer..."+id);
 	return accountService.getAllAccounts();
     }
 	
     @GET
     @Path("/{accountID}")
     public Account getAccount(@PathParam("accountID") int id) {
-    	System.out.println("getCommentByID..."+id);
+    	System.out.println("getAccountByID..."+id);
 	return accountService.getAccountByID(id);
     }
     
     @POST
-    public Account postMessage(Account account) {
+    public Account postAccount(Account account) {
 	return accountService.createAccount(account);
     }
     
