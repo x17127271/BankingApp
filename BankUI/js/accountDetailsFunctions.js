@@ -11,17 +11,23 @@ function showAccount(accountId) {
     type: "GET",
     contentType: "application/json;",
     success: function (account) {
-      //show Account Shortcode value
+      //show Account Sortcode value
       $("#account-short-code").append(
-        "<label><b>Short Code: </b></label><label> " + account.shortCode + "</label>"
+        "<label><b>Sort Code: </b></label><label> " + account.shortCode + "</label>"
       );
-      //show Account Shortcode value
+      //show Account number value
       $("#account-number").append(
         "<label><b>Account Number: </b></label><label> " +
           account.accountNumber +
           "</label>"
       );
-      //show Account Shortcode value
+      //show Account type value
+      $("#account-type").append(
+        "<label><b>Account Type: </b></label><label> " +
+          account.accountType +
+          "</label>"
+      );      
+      //show Account balance value
       $("#account-balance").append(
         "<label><b>Balance: </b></label><label> " + account.balance + "</label>"
       );

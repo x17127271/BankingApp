@@ -17,9 +17,11 @@ function getAndDisplayAccounts() {
           "<tr><td>" +
             item.id +
             "</td><td>" +
-            item.shortCode +
+            item.sortCode +
             "</td><td>" +
             item.accountNumber +
+            "</td><td>" +
+            item.accountType +
             "</td><td>" +
             item.balance +
             '</td><td><a class="btn btn-dark btn-sm" href="account-details.html?id=' +
@@ -37,12 +39,15 @@ function getAndDisplayAccounts() {
 }
 
 function createAccount() {
+  var accountType = $("#forAccountType option:checked").val();
+
   var accountData = {
     accountNumber: Math.floor(
       Math.random() * (55555555 - 11111111 + 10) + 11111111
     ),
+    accountType: accountType,
     balance: 3255.64,
-    shortCode: Math.floor(Math.random() * (666 - 111 + 8) + 111),
+    sortCode: Math.floor(Math.random() * (666 - 111 + 8) + 111),
   };
 
   $.ajax({

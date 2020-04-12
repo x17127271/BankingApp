@@ -36,7 +36,13 @@
                             <a class="nav-link" href="transactions.html">Transactions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Lodgements</a>
+                            <a class="nav-link" href="transfers.html">Transfers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="withdrawals.html">Withdrawals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="lodgements.html">Lodgements</a>
                         </li>
                     </ul>
                 </div>
@@ -51,14 +57,15 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-8">
-                        <h4>Accounts</h4>
+                        <h5>Accounts</h5>
                         <table id="account-table" class="table table-hover">
                             <caption>List of accounts</caption>
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Short Code</th>
+                                    <th scope="col">Sort Code</th>
                                     <th scope="col">Account Number</th>
+                                    <th scope="col">Account Type</th>
                                     <th scope="col">Balance</th>
                                     <th scope="col">Actions</th>
                                 </tr>
@@ -70,8 +77,17 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-8">
-                        <button type="button" onclick="createAccount()" class="btn btn-dark">New Account</button>
-
+                        <h5>Simulate creation of an Account</h5>
+                        <div class="form-group">
+                            <label for="forAccountType">Type</label>
+                            <select id="forAccountType" class="form-control">
+                                <option selected>Choose an Account Type</option>
+                                <option>Current</option>
+                                <option>Savings</option>
+                            </select>
+                        </div>
+                        <button type="button" onclick="createAccount()" class="btn btn-dark">New
+                            Transaction</button>
                     </div>
                 </div>
                 <!-- End Content -->

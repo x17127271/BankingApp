@@ -1,13 +1,14 @@
 $(function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const transactionId = urlParams.get("id");
+    const transactionId = urlParams.get("transactionid");
+    const accountId = urlParams.get("accountid");
   
-    showTransaction(transactionId);
+    showTransaction(accountId,transactionId);
   });
   
-  function showTransaction(transactionId) {
+  function showTransaction(accountId, transactionId) {
     $.ajax({
-      url: "http://127.0.0.1:49000/api/customers/1/transactions/" + transactionId,
+      url: "http://127.0.0.1:49000/api/customers/1/accounts/"+ accountId +"/transactions/" + transactionId,
       type: "GET",
       contentType: "application/json;",
       success: function (transaction) {

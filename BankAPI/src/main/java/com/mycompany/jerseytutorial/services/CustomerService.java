@@ -18,7 +18,10 @@ public class CustomerService {
           
     Database databaseData = new Database();
     private List<Customer> customerList = databaseData.getCustomersDB();
-       
+    
+    public List<Customer> getAllCustomers() {
+        return customerList;
+    }
     
     public Customer getCustomer(long id) {
         int i = Math.toIntExact(id);

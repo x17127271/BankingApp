@@ -1,16 +1,23 @@
 $(function () {
-  getAndDisplayTransactions();
+  
+  fillAccountDropDown();
+  $("#forAccount").change(function(){
+    var accountId = $("#forAccount option").filter(":selected").val();
+    getAndDisplayTransactions(accountId);
+  });
 });
 
-function getAndDisplayTransactions() {
+
+
+function getAndDisplayTransactions(accountId) {
   $.ajax({
-    url: "http://127.0.0.1:49000/api/customers/1/transactions",
+    url: "http://127.0.0.1:49000/api/customers/1/accounts/"+ accountId +"/transactions",
     type: "GET",
     contentType: "application/json;",
-    success: function (accounts) {
-      console.log(accounts);
+    success: function (transactions) {
+      console.log(transactions);
       $("#transaction-table tbody").empty();
-      $(accounts).each(function (index, item) {
+      $(transactions).each(function (index, item) {
         console.log(item);
 
         $("#transaction-table tbody").append(
@@ -24,8 +31,8 @@ function getAndDisplayTransactions() {
             item.description +
             "</td><td>" +
             item.upatedBalance +
-            '</td><td><a class="btn btn-dark btn-sm" href="transaction-details.html?id=' +
-            item.id +
+            '</td><td><a class="btn btn-dark btn-sm" href="transaction-details.html?transactionid=' +
+            item.id + '&&accountid=' + accountId +
             '">Show</a></td></tr>'
         );
       });
@@ -43,6 +50,7 @@ function createTransaction() {
   var tType = $("#forType option:checked").val();
   var tDescription = $("#forDescription").val();
   var tamount = $("#forAmount").val();
+  var accountId = $("#forAccount option").filter(":selected").val();
 
   var transactionData = {
     created: tCreated,
@@ -55,7 +63,7 @@ function createTransaction() {
 
   $.ajax({
     type: "POST",
-    url: "http://127.0.0.1:49000/api/customers/1/transactions",
+    url: "http://127.0.0.1:49000/api/customers/1/accounts/"+ accountId +"/transactions",
     data: JSON.stringify(transactionData),
     dataType: "json",
     contentType: "application/json",

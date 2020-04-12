@@ -36,13 +36,13 @@
               <a class="nav-link" href="transactions.html">Transactions</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Lodgements</a>
+              <a class="nav-link" href="transfers.html">Transfers</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="withdrawals.html">Withdrawals</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="transfers.html">Transfers</a>
+              <a class="nav-link" href="lodgements.html">Lodgements</a>
             </li>
           </ul>
         </div>
@@ -56,8 +56,25 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-8">
+          <div class="col-6">
             <h2>Welcome to your favourite bank</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="col-6">
+            <h5>Choose an Account and request the balance</h5>
+            <div class="form-group mt-3">
+              <label for="forAccount">Bank Account</label>
+              <select id="forAccount" class="form-control">
+                <option value="0" selected>Choose an Account</option>
+              </select>
+            </div>
+            <button type="button" onclick="requestBalance()" class="btn btn-dark">Request Balance</button>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="col-6 mt-3">
+            <label id="balance-result"></label>
           </div>
         </div>
         <!-- End Content -->
