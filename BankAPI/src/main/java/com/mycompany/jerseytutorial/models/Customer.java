@@ -23,18 +23,25 @@ public class Customer {
     private String password;
     private Date created;
     private List<Account> accounts;
-    private List<Transaction> transactions;
+    private List<Withdrawal> withdrawals;
+    private List<Transfer> transfers;
+    private List<Lodgement> lodgements;
 
     public Customer() {
     }
 
     public Customer(long id, String name, String email, String address,
-            String password, List<Account> accounts, List<Transaction> transactions) {
+            String password, List<Account> accounts, List<Withdrawal> withdrawals,
+            List<Transfer> transfers, List<Lodgement> lodgements) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.address = address;
         this.created = new Date();
+        this.accounts = accounts;
+        this.withdrawals = withdrawals;
+        this.transfers = transfers;
+        this.lodgements = lodgements;
     }
 
     public long getId() {
@@ -91,14 +98,30 @@ public class Customer {
 
     public void setAccounts(List<Account> accounts) {
         this.accounts = accounts;
+    }  
+
+    public List<Withdrawal> getWithdrawals() {
+        return withdrawals;
     }
 
-    public List<Transaction> getTransactions() {
-        return transactions;
+    public void setWithdrawals(List<Withdrawal> withdrawals) {
+        this.withdrawals = withdrawals;
     }
 
-    public void setTransactions(List<Transaction> transactions) {
-        this.transactions = transactions;
+    public List<Transfer> getTransfers() {
+        return transfers;
+    }
+
+    public void setTransfers(List<Transfer> transfers) {
+        this.transfers = transfers;
+    }
+    
+      public List<Lodgement> getLodgements() {
+        return lodgements;
+    }
+
+    public void setLodgements(List<Lodgement> lodgements) {
+        this.lodgements = lodgements;
     }
 
 }

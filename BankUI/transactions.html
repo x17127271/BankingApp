@@ -36,7 +36,13 @@
                             <a class="nav-link" href="transactions.html">Transactions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Lodgements</a>
+                            <a class="nav-link" href="transfers.html">Transfers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="withdrawals.html">Withdrawals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="lodgements.html">Lodgements</a>
                         </li>
                     </ul>
                 </div>
@@ -49,9 +55,21 @@
                         <h1 class="h2">Dashboard</h1>
                     </div>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center mt-3">
                     <div class="col-8">
-                        <h4>Transactions</h4>
+                        <h5>Choose an account to show the transactions</h5>
+                        <div class="form-group mt-3">
+                            <label for="forAccount">Bank Account</label>
+                            <select id="forAccount" class="form-control">
+                              <option value="0" selected>Choose an Account</option>
+              
+                            </select>
+                          </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3">
+                    <div class="col-8">
+                        <h5>Transactions</h5>
                         <table id="transaction-table" class="table table-hover">
                             <caption>List of transactions</caption>
                             <thead>
@@ -71,9 +89,8 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-8">
-                        <h4>Simulate a transaction</h4>
-
-                        <div class="form-group">
+                        <h5>Simulates a transaction for the account selected above</h5>                       
+                        <div class="form-group mt-3">
                             <label for="forDescription">Description</label>
                             <input type="text" class="form-control" id="forDescription" placeholder="Description">
                         </div>
@@ -107,6 +124,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="js/mainFuctions.js"></script>
     <script src="js/mainFuctions.js"></script>
     <script src="js/transactionsFunctions.js"></script>
 </body>

@@ -25,26 +25,45 @@ import javax.ws.rs.QueryParam;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class CustomerResource {
-    
+
     CustomerService customerService = new CustomerService();
-         
+    
+   /** @GET
+    public List<Customer> getCustomers() {
+        System.out.println("getAllCustomers...");
+	return customerService.getAllCustomers();
+    }
+    */
     @GET
-    @Path("/{customerId}")
-    public Customer getCustomer(@PathParam("customerId") int id) {
+    @Path("/{customerID}")
+    public Customer getCustomer(@PathParam("customerID") int id) {
         return customerService.getCustomer(id);
     }
-        
-    
+
     @Path("/{customerID}/accounts")
     public AccountResource getAccountsResource() {
-	System.out.println("Getting accounts subresoruces...");
-	return new AccountResource();
+        System.out.println("Getting accounts subresoruces...");
+        return new AccountResource();
     }
     
-    @Path("/{customerID}/transactions")
-    public TransactionResource getTransactionsResource() {
-	System.out.println("Getting transaction subresoruces...");
-	return new TransactionResource();
+   
+
+    @Path("/{customerID}/transfers")
+    public TransferResource getTransfersResource() {
+        System.out.println("Getting transfer subresoruces...");
+        return new TransferResource();
+    }
+
+    @Path("/{customerID}/withdrawals")
+    public WithdrawalResource getWithdrawalsResource() {
+        System.out.println("Getting withdrawal subresoruces...");
+        return new WithdrawalResource();
+    }
+
+    @Path("/{customerID}/lodgements")
+    public LodgementResource getLodgementsResource() {
+        System.out.println("Getting lodgement subresoruces...");
+        return new LodgementResource();
     }
 
 }

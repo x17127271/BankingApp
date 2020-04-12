@@ -29,7 +29,7 @@ public class AccountResource {
     private AccountService accountService = new AccountService();
 	
     @GET
-    public List<Account> getAccounts(@PathParam("accountID") int id) {
+    public List<Account> getAccounts(@PathParam("customerID") int id) {
         System.out.println("getAllAccountsForCustomer..."+id);
 	return accountService.getAllAccounts();
     }
@@ -46,4 +46,9 @@ public class AccountResource {
 	return accountService.createAccount(account);
     }
     
+    @Path("/{accountID}/transactions")
+    public TransactionResource getTransactionsResource() {
+	System.out.println("Getting transaction subresoruces...");
+	return new TransactionResource();
+    }
 }
