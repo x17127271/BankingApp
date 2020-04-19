@@ -31,7 +31,7 @@ public class TransactionResource {
     @GET
     public List<Transaction> getTransactions(@PathParam("accountID") int id) {
         System.out.println("getAllTransactionsForAccount..."+id);
-	return transactionService.getAllTransactions();
+	return transactionService.getAllTransactionsByAccount(id);
     }
 	
     @GET

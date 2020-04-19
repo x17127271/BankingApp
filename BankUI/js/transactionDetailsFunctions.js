@@ -20,15 +20,21 @@ $(function () {
         $("#transaction-type").append(
           "<label><b>Type: </b></label><label> " + transaction.type + "</label>"
         );
+         //show transaction accountId value
+         $("#transaction-description").append(
+          "<label><b>Description: </b></label><label> " +
+          transaction.accountId +
+            "</label>"
+        );
         //show transaction description value
         $("#transaction-description").append(
           "<label><b>Description: </b></label><label> " +
           transaction.description +
             "</label>"
         );
-        //show transaction updated balance value
+        //show transaction amount value
         $("#transaction-balance").append(
-          "<label><b>Updated Balance: </b></label><label> " + transaction.upatedBalance + "</label>"
+          "<label><b>Updated Balance: </b></label><label> " + transaction.amount + "</label>"
         );
       },
       error: function (XMLHttpRequest, textStatus, errorThrown) {

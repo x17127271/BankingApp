@@ -9,6 +9,7 @@ import com.mycompany.jerseytutorial.databases.Database;
 import com.mycompany.jerseytutorial.models.Transaction;
 import com.mycompany.jerseytutorial.models.Account;
 import com.mycompany.jerseytutorial.models.Customer;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,7 +37,20 @@ public class TransactionService {
 
     public Transaction createTransaction(Transaction transaction) {
         transaction.setId(transactionList.size() + 1);
-        transactionList.add(transaction);
+        int accountId = Math.toIntExact(transaction.getAccountId());    
+        
+        Account account = accountsList.get(accountId - 1);
+        double currentAmount = (double)account.getBalance() - transaction.getAmount();
+        account.setBalance(currentAmount);
+       
+        if(account.getTransactions() == null){
+            ArrayList<Transaction> transactionsList = new ArrayList<Transaction>();
+            transactionsList.add(transaction);
+            account.setTransactions(transactionsList);
+        }else{
+            account.getTransactions().add(transaction);
+        }
+        
         System.out.println("201 - resource created with path: /transaction/" + String.valueOf(transaction.getId()));
         return transaction;
     }

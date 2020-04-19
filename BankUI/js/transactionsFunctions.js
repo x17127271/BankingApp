@@ -28,11 +28,13 @@ function getAndDisplayTransactions(accountId) {
             "</td><td>" +
             item.type +
             "</td><td>" +
+            item.accountId +
+            "</td><td>" +
             item.description +
             "</td><td>" +
-            item.upatedBalance +
+            item.amount +
             '</td><td><a class="btn btn-dark btn-sm" href="transaction-details.html?transactionid=' +
-            item.id + '&&accountid=' + accountId +
+            item.id + '&&accountid=' + item.accountId +
             '">Show</a></td></tr>'
         );
       });
@@ -56,7 +58,8 @@ function createTransaction() {
     created: tCreated,
     type: tType,
     description: tDescription,
-    upatedBalance: tamount,
+    amount: tamount,
+    accountId: accountId
   };
 
   console.log(transactionData);

@@ -19,17 +19,19 @@ public class Transaction {
     private String type;
     private Date created;
     private String description;
-    private double upatedBalance;
+    private double amount;
+    private long accountId;
 
     public Transaction() {
     }
 
-    public Transaction(long id, String type, String description, double upatedBalance) {
+    public Transaction(long id, String type, String description, double amount, long accountId) {
         this.id = id;
         this.type = type;
         this.description = description;
-        this.upatedBalance = upatedBalance;
+        this.amount = amount;
         this.created = new Date();
+        this.accountId = accountId;
     }
 
     public long getId() {
@@ -56,12 +58,12 @@ public class Transaction {
         this.description = description;
     }
 
-    public double getUpatedBalance() {
-        return upatedBalance;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setUpatedBalance(double upatedBalance) {
-        this.upatedBalance = upatedBalance;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
     
     public Date getCreated() {
@@ -70,6 +72,14 @@ public class Transaction {
 
     public void setCreated(Date created) {
         this.created = created;
+    }
+    
+     public long getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(long accountId) {
+        this.accountId = accountId;
     }
 
 }
