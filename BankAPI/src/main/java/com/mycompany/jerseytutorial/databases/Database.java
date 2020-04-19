@@ -34,7 +34,7 @@ public class Database {
 
             //creating Transaction data
             Transaction transactionOne
-                    = new Transaction(1, "Debit", "Spar Grocery", 1200.24);
+                    = new Transaction(1, "Debit", "Spar Grocery", 54.68,1);
 
             transactionDB.add(transactionOne);
 
