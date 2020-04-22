@@ -21,8 +21,8 @@ $(function () {
           "<label><b>Type: </b></label><label> " + transaction.type + "</label>"
         );
          //show transaction accountId value
-         $("#transaction-description").append(
-          "<label><b>Description: </b></label><label> " +
+         $("#transaction-account").append(
+          "<label><b>AccountId: </b></label><label> " +
           transaction.accountId +
             "</label>"
         );
