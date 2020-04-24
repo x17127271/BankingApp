@@ -13,7 +13,7 @@ function showAccount(accountId) {
     success: function (account) {
       //show Account Sortcode value
       $("#account-short-code").append(
-        "<label><b>Sort Code: </b></label><label> " + account.shortCode + "</label>"
+        "<label><b>Sort Code: </b></label><label> " + account.sortCode + "</label>"
       );
       //show Account number value
       $("#account-number").append(
